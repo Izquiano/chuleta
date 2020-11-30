@@ -132,14 +132,23 @@ $ kill -9 PID
 // método abreviado sin password ni host concreto
 
 
-mongoimport --type csv -d nombreDeLaBaseDeDatos -c nombreDeLaColeción --headerline --drop dump/nombreDelArchivo.csv
+$ mongoimport --type csv -d nombreDeLaBaseDeDatos -c nombreDeLaColeción --headerline --drop dump/nombreDelArchivo.csv
 
-mongoimport --db baseDatos --collection coleccion --type csv --host direccion_o_ip --port 23456 --username usuario --password contraseña --file ficheroImportar.csv
+$ mongoimport --db baseDatos --collection coleccion --type csv --host direccion_o_ip --port 23456 --username usuario --password contraseña --file ficheroImportar.csv
 ```
 
 ### Desde JSON
 
 // to import this data-set to the database named "test" and collection named "zips"
 ```shell
-mongoimport --db test --collection "zips" --drop --type json --host "localhost:47019"  --file "c:\Users\yc03ak1\Desktop\zips.json"
+$ mongoimport --db test --collection "zips" --drop --type json --host "localhost:47019"  --file "c:\Users\yc03ak1\Desktop\zips.json"
+```
+
+### Setear la carpeta donde mongo guarda los datos
+* The databases are stored in the /usr/local/var/mongodb/ directory
+* The mongod.conf file is here: /usr/local/etc/mongod.conf
+* The mongo logs can be found at /usr/local/var/log/mongodb/
+* The mongo binaries are here: /usr/local/Cellar/mongodb/[version]/bin
+```shell
+$ mongod --dbpath /usr/local/var/mongodb
 ```
