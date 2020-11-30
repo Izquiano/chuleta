@@ -79,6 +79,12 @@ const fruit = {
 * [x] Tarea 1
 * [ ] Tarea 2
 
+<!-- Nombrer usuarios -->
+@Izquiano
+
+<!-- Lista de emojis -->
+:smiley:
+:+1:
 
 
 
