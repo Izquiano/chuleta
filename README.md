@@ -117,7 +117,7 @@ export default CounterApp
 
 
 # Cerrar proceso en un puerto
-# VS code
+
 ```shell
 $ lsof -i tcp:3000
 $ kill -9 PID
