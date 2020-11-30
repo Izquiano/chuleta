@@ -130,7 +130,9 @@ $ kill -9 PID
 
 ```shell
 // método abreviado sin password ni host concreto
-mongoimport --db baseDatos --collection coleccion --file fichero_a_importar --type csv
+
+
+mongoimport --type csv -d nombreDeLaBaseDeDatos -c nombreDeLaColeción --headerline --drop dump/nombreDelArchivo.csv
 
 mongoimport --db baseDatos --collection coleccion --type csv --host direccion_o_ip --port 23456 --username usuario --password contraseña --file ficheroImportar.csv
 ```
