@@ -77,7 +77,7 @@ const fruit = {
   <!-- Todo list -->
 
 * [x] Tarea 1
-* [] Tarea 2
+* [ ] Tarea 2
 
 
 
