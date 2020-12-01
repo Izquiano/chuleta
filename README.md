@@ -173,3 +173,51 @@ $ git branch login  // crea una nueva rama 'login'
 $ git checkout login // nos pasamos a la rama login
 $ git remote add origin https://github.com/Izquiano/nombre-repo.git  // setea el repositorio de git donde se guardan los cambios
 ```
+
+
+# Docker
+## Crear un contenedor para Node
+Creamos un archivo con el nombre
+> Dockerfile
+
+sin extensión. y añadimos estas lineas 
+```docker
+FROM node:12
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm","start"]
+```
+
+en el package.json creamos un script 
+```json
+"start": "node src/index.js"
+```
+y en la consola escribimos
+```shell
+$ docker build -t node-restapi . 
+```
+Creará la imagen y listamos los contenedores cn el comando:
+```shell
+$ docker images
+```
+
+para ejecutar la imagen escribimos:
+>Nota que -it es para que sea interactivo y -p es para que el puerto interno del contenedor sea el 3000 (lo definimos en el index.js) y 4000 el exterior para acceder desde el navegador
+```shell
+docker run -it -p 4000:3000 node-restapi
+````
+Ahora podemos acceder a la aplicación a traves de 
+
+> http://localhost:4000/
+
+Para acceder a la imagen y que no sea interactivo 
+```shell
+$ docker run -p 4000:3000 node-restapi
+```
