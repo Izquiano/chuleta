@@ -152,3 +152,17 @@ $ mongoimport --db test --collection "zips" --drop --type json --host "localhost
 ```shell
 $ mongod --dbpath /usr/local/var/mongodb
 ```
+
+
+# Git
+```shell
+$ git init
+$ git add .
+$ git status -s 
+$ git commit -m "Mensaje"
+$ git push -u origin master
+$ git pull
+$ git clone
+
+
+```
