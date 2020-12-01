@@ -162,7 +162,14 @@ $ git status -s
 $ git commit -m "Mensaje"
 $ git push -u origin master
 $ git pull
-$ git clone
-
-
+$ git clone https://github.com/Izquiano/nombre-repo.git
+$ git config --global user.email "your@email.com"
+$ git config --global user.name "Your Name"
+$ git log  // muestra todos los commits
+$ git checkout -- index.html  // descarta los cambios en un archivo no añadido
+$ git diff index.html  // muestra las diferencias entre versiones
+$ git branch  // muestra las ramas que tenemos
+$ git branch login  // crea una nueva rama 'login'
+$ git checkout login // nos pasamos a la rama login
+$ git remote add origin https://github.com/Izquiano/nombre-repo.git  // setea el repositorio de git donde se guardan los cambios
 ```
