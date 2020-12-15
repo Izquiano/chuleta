@@ -221,3 +221,81 @@ Para acceder a la imagen y que no sea interactivo
 ```shell
 $ docker run -p 4000:3000 node-restapi
 ```
+
+Listar procesos de Docker
+```shell
+$ docker ps
+```
+
+Parar procesos
+```shell
+$ docker stop idContenedor
+```
+Ver histórico de procesos
+```shell
+$ docker ps -a
+````
+
+# Webpack
+
+Se inicializa un proyecto de NodeJs
+```shell
+$ npm init -y
+````
+instalamos el paquete de webpack y webpack-cli
+```shell
+npm i webpack
+npm i webpack-cli
+npm i webpack-dev-server -dev
+
+````
+instalamos los plugins necesarios
+```shell
+npm i html-webpack-plugin
+npm i style-loader css-loader
+npm i sass-loader node -sass
+````
+
+
+
+En la raiz del proyecto creamos un archivo <b>webpack.config.js</b>
+```javascript
+// los css se importan en el app.js
+
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+
+module.exports = {
+  entry: './src/app.js',
+  output: {
+    path: __dirname + 'build',
+    filename: 'bundle.js',
+  },
+  devServer: {
+    port: 5000
+  },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' }
+        ]
+      }
+      
+
+    ]
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: './src/index.html'
+    })
+  ]
+}
+```
+En la consola
+```shell
+npx webpack-dev-server
+```
+
